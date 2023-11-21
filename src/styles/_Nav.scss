@@ -1,0 +1,38 @@
+.Nav {
+  .nav-menu-item {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      // transform: translateX(-50%);
+      width: 100%;
+      height: 3px;
+      background-color: rgb(99, 15, 15);
+      // border-left: 5px solid transparent;
+      // border-right: 5px solid transparent;
+      // border-bottom: 5px solid #318CE7;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    &.active {
+        // color: $default-red;
+        &::after {
+          opacity: 1;
+        }
+      }
+    
+
+    &:hover {
+      &.active::after {
+        opacity: 1;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
