@@ -68,7 +68,7 @@
 .newHead {
   background-color: white;
   position: relative;
-  height: 60vh;
+  height: 100vh;
   margin-top: 6rem;
 
   &::before {
@@ -110,4 +110,14 @@
       z-index: 1;
     }
   }
+
+  @media screen and (min-width: 1200px) {
+    height: 80vh;
+
+     }
+
+  @media screen and (min-width: 1400px) {
+    height: 70vh;
+
+     }
 }

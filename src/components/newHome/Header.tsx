@@ -26,10 +26,10 @@ const Header = () => {
     return (
         // <section className=' bg-yellow-200 h-auto mt-20'>
         <div className={`mt-3 w-full bg-white h-full pt-20 ${S.newHead}`} >
-            <div className="container grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className={` w-2/3 ml-auto`}>
-                    <h1 className=' text-right mt-8 text-navy-blue text-3xl lg:text-6xl font-bold'>SERVING THE BRAVE</h1>
-                    <div className=' w-80 translate-y-[80%] h-32 px-10 py-7 mt-6 rounded-md ml-auto bg-yellow-200'>
+            <div className="container grid grid-cols-1 md:grid-cols-2 gap-5 h-full">
+                <div className={` w-2/3 ml-auto h-full flex flex-col justify-stretch`}>
+                    <h1 className=' text-right mt-8 text-navy-blue text-3xl xl:text-6xl font-bold'>SERVING THE BRAVE</h1>
+                    <div className=' w-80 mt-auto relative z-[3] h-32 px-10 py-7 rounded-md ml-auto bg-yellow-200'>
                         <p className=' text-sm'>The bonds we form. The battles we face. See what it means to fight and win as a Nigerian Navy.</p>
                     </div>
                 </div>

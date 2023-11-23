@@ -33,7 +33,7 @@ const _Nav = () => {
     return (
         // <div className=' relative min-h-[2rem]'>
         <div className={`transition-all duration-200 ${scrolled ? " bg-blue-900 bg-opacity-90 text-white " : " bg-opacity-20 text-navy-blue"
-            } py-8 fixed w-full left-0 top-0 z-50`}>
+            } py-4 fixed w-full left-0 top-0 z-50`}>
             <span className=' w-full relative'>
                 <nav className=' container flex items-center justify-between Nav'>
                     <Link href={'/'} className={` ${scrolled ? 'text-white' : 'text-navy-blue'} font-bold text-xl flex items-center gap-1`}>
