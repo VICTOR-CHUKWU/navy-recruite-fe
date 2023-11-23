@@ -52,14 +52,6 @@ const _Nav = () => {
         };
     }, []);
 
-    // const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-    //     console.log('lol');
-
-    //     if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-    //         setMenuStates(null);
-    //     }
-    // };
-
     return (
         <div className=' relative min-h-[2rem] bg-blue-900 bg-opacity-10'>
             <div className={`transition-all duration-200 ${scrolled ? " bg-blue-900 bg-opacity-90 text-white " : " bg-opacity-20 text-navy-blue"

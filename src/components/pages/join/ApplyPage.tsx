@@ -1,10 +1,10 @@
 import React from 'react'
-import { NavyApplication } from '@/components/join'
+import { AuthPage } from '@/components/join'
 
 const ApplyPage = () => {
     return (
         <>
-            <NavyApplication />
+            <AuthPage />
         </>
     )
 }

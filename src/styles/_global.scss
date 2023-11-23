@@ -161,3 +161,17 @@ body {
 
        }
   }
+
+  .textBorder {
+    position: relative;
+  
+    &::after {
+      content: "";
+      width: 4rem;
+      height: 3px;
+      background: $vivid-red;
+      bottom: -0.1rem;
+      position: absolute;
+      left: 0;
+    }
+  }

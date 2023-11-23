@@ -1,14 +1,15 @@
 import React from 'react'
-import { Header, HeroSection, HowToJoin, FeaturedArticles, NewsLetter } from '@/components/home'
+import { Header, Disclamer, ServingBrave, Insight, FeaturedArticles } from '@/components/newHome'
 
 const HomePage = () => {
     return (
         <>
             <Header />
-            <HeroSection />
-            <HowToJoin />
+            <Disclamer />
+            <ServingBrave />
+            <Insight />
             <FeaturedArticles />
-            <NewsLetter />
+
         </>
     )
 }

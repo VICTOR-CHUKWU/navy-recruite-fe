@@ -1,0 +1,1 @@
+export const applicationSteps = ['Personal Information', 'Accademics Information', 'Employmemt History', 'Support Documents', 'Files Upload']
