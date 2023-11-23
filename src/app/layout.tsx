@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Nav } from '@/components/Nav'
+import Footer from '@/components/Footer'
 import '@/styles/app.scss'
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,9 +17,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+      </head>
       <body className={inter.className}>
         <Nav />
-        {children}</body>
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

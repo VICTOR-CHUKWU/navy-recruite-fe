@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import S from '@/styles/page/home/home.module.scss'
 
 const Header = () => {
@@ -10,11 +11,11 @@ const Header = () => {
                     <span className="text-slate-300">of our</span>
                     <span className=" text-navy-blue">country</span>
                 </h1> */}
-                <div className=" mt-[20%] w-full shrink-0 flex items-center justify-between">
+                <div className=" mt-[12%] xl:mt-[20%] w-full shrink-0 flex items-center justify-between">
                     <p className=" w-80">The bonds we form. The battles we face. See what it means to fight and win as a Nigerian Navy.</p>
                     <div className=" flex items-center gap-9">
-                        <button className=" cursor-pointer border-0 bg-vivid-red text-white rounded-md h-11 w-44 flex items-center justify-center">Join Corp</button>
-                        <button className=" cursor-pointer border-2 border-blue-900 bg-transparent text-blue-900 rounded-md h-11 w-44 flex items-center justify-center">View Requirements</button>
+                        <Link href='join/apply' className=" cursor-pointer border-0 bg-vivid-red text-white rounded-md h-11 w-44 flex items-center justify-center">Join Corp</Link>
+                        <Link href='join/requirements' className=" cursor-pointer border-2 border-blue-900 bg-transparent text-blue-900 rounded-md h-11 w-44 flex items-center justify-center">View Requirements</Link>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,16 @@
 $default-blue: #0c2463;
 $navy-blue: #0A1E3E;
-$vivid-red: #cf2e2e;
+$vivid-red: #8f0000;
+// $vivid-red: #18744d;
+
+@mixin container($breakpoints: (576px, 768px, 992px, 1200px, 1400px)) {
+    max-width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+  
+    @each $breakpoint in $breakpoints {
+      @media screen and (min-width: $breakpoint) {
+        max-width: $breakpoint;
+      }
+    }
+  }

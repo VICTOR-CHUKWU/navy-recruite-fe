@@ -1,10 +1,14 @@
 import React from 'react'
-import { Header } from '@/components/home'
+import { Header, HeroSection, HowToJoin, FeaturedArticles, NewsLetter } from '@/components/home'
 
 const HomePage = () => {
     return (
         <>
             <Header />
+            <HeroSection />
+            <HowToJoin />
+            <FeaturedArticles />
+            <NewsLetter />
         </>
     )
 }

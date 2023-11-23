@@ -18,38 +18,146 @@ body {
 }
 
 .container {
-    max-width: 98%;
-    margin-left: auto;
-    margin-right: auto;
+  @include container;
   }
+
   
+
+  .sticky {
+    position: sticky;
+}
+
+.Icon {
+    display: inline-flex;
+    font-size: inherit;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-style: normal;
+    color: inherit;
+    transition: opacity 0.3s, transform 0.3s;
   
-  .container {
-    @media screen and (min-width: 576px) {
-      max-width: 540px;
+    &.size__tiny {
+      $size: 1.5rem;
+  
+      width: $size;
+      min-width: $size;
+      height: $size;
+    }
+  
+    &.size__small {
+      $size: 2rem;
+  
+      width: $size;
+      min-width: $size;
+      height: $size;
+    }
+  
+    &.size__medium {
+      $size: 3rem;
+  
+      width: $size;
+      min-width: $size;
+      height: $size;
+    }
+  
+    &.size__large {
+      $size: 4.5rem;
+  
+      width: $size;
+      min-width: $size;
+      height: $size;
+    }
+  
+    &.size__inherit {
+      $size: 1em;
+  
+      width: $size;
+      min-width: $size;
+      height: $size;
+    }
+  
+    > svg {
+      height: 100%;
+      width: 100%;
+      // fill: currentColor;
+      stroke: currentColor;
+      font-weight: inherit;
+      stroke-width: 2px;
     }
   }
   
-  .container {
-    @media screen and (min-width: 768px) {
-      max-width: 730px;
+  
+  
+  // .container {
+  //   @media screen and (min-width: 576px) {
+  //     max-width: 540px;
+  //   }
+  // }
+  
+  // .container {
+  //   @media screen and (min-width: 768px) {
+  //     max-width: 730px;
+  //   }
+  // }
+  
+  // .container {
+  //   @media screen and (min-width: 992px) {
+  //     max-width: 960px;
+  //   }
+  // }
+  
+  // .container {
+  //   @media screen and (min-width: 1200px) {
+  //     max-width: 1140px;
+  //   }
+  // }
+  
+  // .container {
+  //   @media screen and (min-width: 1400px) {
+  //     max-width: 1250px;
+  //   }
+  // }
+
+  .Circle {
+    position: relative;
+    width: 200px; /* Adjust the size of the circle */
+    height: 200px; /* Adjust the size of the circle */
+    border: 10px solid white; /* Adjust the border thickness and color */
+  
+    border-radius: 50%; /* Make it a circle */
+  
+    /* Add the arrow elements */
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent transparent white transparent;
+    }
+  
+    &::before {
+      top: 0;
+      left: 50%;
+      border-width: 20px 10px 0 10px; /* Adjust the arrow size */
+      transform: translateX(-50%);
+    }
+  
+    &::after {
+      bottom: 0;
+      left: 50%;
+      border-width: 0 10px 20px 10px; /* Adjust the arrow size */
+      transform: translateX(-50%);
     }
   }
-  
-  .container {
-    @media screen and (min-width: 992px) {
-      max-width: 960px;
-    }
-  }
-  
-  .container {
-    @media screen and (min-width: 1200px) {
-      max-width: 1140px;
-    }
-  }
-  
-  .container {
+
+  .mat-big {
+    font-size: 5.5rem !important;
+
     @media screen and (min-width: 1400px) {
-      max-width: 1250px;
-    }
+      font-size: 8.5rem !important;
+
+       }
   }
