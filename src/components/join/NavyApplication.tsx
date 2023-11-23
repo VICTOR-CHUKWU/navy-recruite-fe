@@ -18,13 +18,13 @@ const NavyApplication = () => {
                 <div className="container relative my-10 min-h-[20rem]">
                     <div className=' bg-navy-blue w-1/2 flex items-center justify-center flex-col py-10 absolute bottom-0 z-[2] -top-20 text-white'>
                         <h3 className='text-white text-center font-bold text-4xl w-1/2 mx-auto uppercase'>WE MAKE SAILORS</h3>
-                        <p className=' w-2/3 mx-auto mt-5'>No recruit earns the Eagle, Globe, and Anchor alone. Becoming a Marine will be only be accomplished with those in your platoon you fight alongside, with the torch that's passed to you by many generations of Marines who built this legacy with willingness and determination, and with the fighting spirit inside you that will stop at nothing to win for our Nation.</p>
+                        <p className=' w-2/3 mx-auto mt-5'>No recruit earns the Eagle, Globe, and Anchor alone. Becoming a Marine will be only be accomplished with those in your platoon you fight alongside, with the torch that&apos;s passed to you by many generations of Marines who built this legacy with willingness and determination, and with the fighting spirit inside you that will stop at nothing to win for our Nation.</p>
                     </div>
                 </div>
                 <div className=' pl-20 w-1/2 mt-[5rem]'>
                     <h3 className=' text-navy-blue font-bold text-3xl mb-5'>THE BATTLES AHEAD DEMAND THE FIGHT WITHIN</h3>
                     <p>
-                        There is no room in our ranks for those who fall behind. Because of this, we constantly and continually take recruits to the brink of exhaustion in ways that test their toughness physically, mentally, and even ethically. To earn our title is to prove you belong alongside our Nation’s elite fighters. Imminent battles that must be won within, and together, include:
+                        There is no room in our ranks for those who fall behind. Because of this, we constantly and continually take recruits to the brink of exhaustion in ways that test their toughness physically, mentally, and even ethically. To earn our title is to prove you belong alongside our Nation&apos;s elite fighters. Imminent battles that must be won within, and together, include:
                     </p>
                 </div>
 
