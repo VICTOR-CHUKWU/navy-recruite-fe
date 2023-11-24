@@ -5,9 +5,9 @@ import { SVGIcon } from './shared'
 const Footer = () => {
     return (
         <div className=' bg-navy-blue py-10'>
-            <div className=' container text-white flex justify-between'>
-                <div className=' w-[80%] shrink-0'>
-                    <div className="flex items-center gap-40">
+            <div className=' container text-white flex justify-between flex-wrap gap-4'>
+                <div className=' w-full md:w-[75%] shrink-0'>
+                    <div className="flex items-center gap-40 text-sm md:text-base">
                         <div className=' flex flex-col gap-10'>
                             <span>REQUEST INFORMATION</span>
                             <span>LOCATIONS</span>
@@ -17,7 +17,7 @@ const Footer = () => {
                             <span>COMMUNITY GUIDELINES</span>
                         </div>
                     </div>
-                    <div className=' flex items-center gap-6 mt-16'>
+                    <div className=' flex items-center gap-6 mt-16 text-sm md:text-base flex-wrap'>
                         <span>SAILORS.MIL</span>
                         <span>PRIVACY POLICY</span>
                         <span>

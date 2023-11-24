@@ -38,11 +38,11 @@ const _Nav = () => {
                 <nav className=' container flex items-center justify-between Nav'>
                     <Link href={'/'} className={` ${scrolled ? 'text-white' : 'text-navy-blue'} font-bold text-xl flex items-center gap-1`}>
                         <Image src='/img/logo.png' alt='logo' width={50} height={50} />
-                        <span>Nigerian Navy</span>
+                        <span className=' text-xs md:text-base'>Nigerian Navy</span>
                     </Link>
                     <div className=' flex items-center gap-10'>
-                        <span>Call <a href="tel:0809345678">0804844940</a></span>
-                        <Link href='join/apply' className=' border-none outline-none h-12 w-44 flex items-center justify-center bg-yellow-200 text-slate-800 font-semibold text-lg rounded-md cursor-pointer'>Apply Now</Link>
+                        <span className=' hidden md:flex'>Call <a href="tel:0809345678">0804844940</a></span>
+                        <Link href='join/apply' className=' border-none outline-none h-12 w-32 md:w-44 flex items-center justify-center bg-yellow-200 text-slate-800 font-semibold text-lg rounded-md cursor-pointer'>Apply Now</Link>
                     </div>
                 </nav>
             </span>
