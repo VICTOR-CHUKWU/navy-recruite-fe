@@ -117,7 +117,7 @@ const PersonalDetails = forwardRef(({
                                     id="state"
                                     value={value}
                                     onChange={onChange}
-                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                    className={` border-2 bg-white border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                 >
                                     <option>Choose a State</option>
                                     {states.map((el) => (
@@ -192,6 +192,84 @@ const PersonalDetails = forwardRef(({
                     </span>
                 </div>
                 <p className=" text-navy-blue font-semibold text-xl mb-5">Medical Informations</p>
+                <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <span>
+                        <label className="form-label" htmlFor=" Height">
+                            Height(cm)
+                        </label>
+                        <Controller
+                            control={control}
+                            name="permanentAdress"
+                            render={({ field: { onChange, value } }) => (
+                                <input
+                                    type="number"
+                                    id=" Height"
+                                    value={value}
+                                    onChange={onChange}
+                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                    placeholder=""
+                                ></input>
+                            )}
+                        />
+                        <InlineErr err={errors?.address?.message} />
+                    </span>
+                    <span>
+                        <label className="form-label" htmlFor="genotype">
+                            Genotype
+                        </label>
+                        <Controller
+                            control={control}
+                            name="state"
+                            render={({ field: { onChange, value } }) => (
+                                <select
+                                    id="genotype"
+                                    value={value}
+                                    onChange={onChange}
+                                    className={` border-2 bg-white border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                >
+                                    <option>Choose a Gneotype</option>
+                                    <option value={'o+'}>O+</option>
+                                    <option value={'o+'}>O+</option>
+                                    <option value={'o+'}>O+</option>
+                                    {/* {states.map((el) => (
+                                        <option key={el.value} value={el.value}>
+                                            {el.text}
+                                        </option>
+                                    ))} */}
+                                </select>
+                            )}
+                        />
+                        <InlineErr err={errors?.state?.message} />
+                    </span>
+                    <span>
+                        <label className="form-label" htmlFor="bloodgroup">
+                            Blood Grp
+                        </label>
+                        <Controller
+                            control={control}
+                            name="state"
+                            render={({ field: { onChange, value } }) => (
+                                <select
+                                    id="bloodgroup"
+                                    value={value}
+                                    onChange={onChange}
+                                    className={` border-2 border-slate-300 bg-white focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                >
+                                    <option>Choose a blod group</option>
+                                    <option value={'o+'}>O+</option>
+                                    <option value={'o+'}>O+</option>
+                                    <option value={'o+'}>O+</option>
+                                    {/* {states.map((el) => (
+                                        <option key={el.value} value={el.value}>
+                                            {el.text}
+                                        </option>
+                                    ))} */}
+                                </select>
+                            )}
+                        />
+                        <InlineErr err={errors?.state?.message} />
+                    </span>
+                </div>
 
             </form>
         </div>
