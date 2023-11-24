@@ -18,18 +18,31 @@ const NavyApplication = () => {
         [step],
     )
 
-    const nextForm = () => {
+    const nextForm = async () => {
         setLoad(true)
-        if (step === 1) {
-            personalDetailRef.current.childMethod()
-        } else if (step === 2) {
-            academicsDetailRef.current.childMethod()
-        } else {
-            setStep(step + 1)
+        try {
+            if (step === 1) {
+
+                const data = await personalDetailRef.current.childMethod()
+                console.log(data, 'data');
+                if (data) {
+                    console.log(data, 'data');
+                    setStep(step + 1)
+                }
+
+            } else if (step === 2) {
+                academicsDetailRef.current.childMethod()
+            } else {
+                setStep(step + 1)
+            }
+        } catch (error) {
+            console.log(error);
+
+        } finally {
+            setLoad(false)
         }
 
-        setStep(step + 1)
-        setLoad(false)
+
 
     }
 

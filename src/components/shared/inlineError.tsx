@@ -4,7 +4,7 @@ import { InlineErrProps } from "@/types";
 const _InlineErr: FC<InlineErrProps> = ({ err }) => {
     if (err) {
         return (
-            <p className="text-red-200 italic text-sm">
+            <p className="text-red-400 italic text-sm">
                 {err}
             </p>
         );

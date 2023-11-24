@@ -14,6 +14,7 @@ const PersonalDetails = forwardRef(({
     const {
         control,
         reset,
+        trigger,
         formState: { errors },
         handleSubmit,
     } = useForm({
@@ -30,9 +31,27 @@ const PersonalDetails = forwardRef(({
     });
 
     useImperativeHandle(ref, () => ({
-        childMethod() {
-            onSubmit()
-        }
+        childMethod: async () => {
+            try {
+                const isValid = await trigger();
+
+                if (isValid) {
+                    const data = await handleSubmit((formData) => {
+                        console.log("Form submitted with data:", formData);
+                        return { ...formData }
+                    })();
+                    console.log(data, 'is data');
+
+                    return data
+                } else {
+                    return null
+                }
+            } catch (error) {
+                console.log(error, 'error');
+
+                return null
+            }
+        },
     }))
 
     const onSubmit = () => {
@@ -43,7 +62,7 @@ const PersonalDetails = forwardRef(({
             <h3 className=" text-center mb-8 font-semibold text-2xl">
                 Fill in your Personal Details
             </h3>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form >
                 <div className=" grid grid-cols-1 md:grid-cols-2 gap-3 border-b-2 border-slate-400 pb-3 mb-4">
                     <span>
                         <label className="form-label" htmlFor="firstName">
