@@ -294,5 +294,5 @@ export const featurenews: IFeatureNews[] = [
 export const socialMedia: { icon: SVGIconName, link: string }[] = [
     { icon: 'face-book', link: 'https://www.facebook.com/profile.php?id=100070652747952&mibextid=ZbWKwL' },
     { icon: 'instagram', link: 'https://www.instagram.com/ght_education' },
-    { icon: 'twitter', link: 'https://www.instagram.com/ght_education' },
+    { icon: 'twitter', link: 'https://www.instagram.com/ght_educations' },
 ]

@@ -11,3 +11,7 @@ export interface IconProps {
     fontSize?: string;
     children?: React.ReactNode;
 }
+
+export interface InlineErrProps {
+    err?: any;
+}
