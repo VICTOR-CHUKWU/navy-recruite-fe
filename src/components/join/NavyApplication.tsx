@@ -42,6 +42,9 @@ const NavyApplication = () => {
                     {
                         applicationSteps.map(renderSteps)
                     }
+                    <div className=' mt-10'>
+                        <button onClick={() => nextForm()} className=' w-72 mx-auto rounded-md h-16 font-semibold text-lg text-navy-blue bg-yellow-200 flex items-center justify-center cursor-pointer'>Save and Continue</button>
+                    </div>
                 </div>
             </div>
             <div className=' relative flex-grow overflow-y-clip h-full px-6 py-10'>
