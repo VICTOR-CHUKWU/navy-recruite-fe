@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Nav } from '@/components/Nav'
 import { NewNav } from '@/components/NewNav'
 import Footer from '@/components/Footer'
+import { LayoutProvider } from './LayoutProvider'
 import '@/styles/app.scss'
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +17,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
       <head>
@@ -26,8 +28,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <NewNav />
-        {children}
-        <Footer />
+        <LayoutProvider>
+          {children}
+        </LayoutProvider>
       </body>
     </html>
   )

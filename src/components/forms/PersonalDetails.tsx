@@ -24,6 +24,7 @@ const PersonalDetails = forwardRef(({
             email: data?.email || "",
             state: data?.state || "",
             address: data?.address || "",
+            permanentAdress: '',
             phoneNumber: data?.phoneNumber || "",
         },
     });
@@ -43,7 +44,7 @@ const PersonalDetails = forwardRef(({
                 Fill in your Personal Details
             </h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className=" grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className=" grid grid-cols-1 md:grid-cols-2 gap-3 border-b-2 border-slate-400 pb-3 mb-4">
                     <span>
                         <label className="form-label" htmlFor="firstName">
                             Your First Name
@@ -151,14 +152,14 @@ const PersonalDetails = forwardRef(({
                     </span>
                     <span>
                         <label className="form-label" htmlFor="address">
-                            Your Home Address
+                            Your House Address
                         </label>
                         <Controller
                             control={control}
                             name="address"
                             render={({ field: { onChange, value } }) => (
                                 <input
-                                    type="tel"
+                                    type="text"
                                     id="address"
                                     value={value}
                                     onChange={onChange}
@@ -169,7 +170,29 @@ const PersonalDetails = forwardRef(({
                         />
                         <InlineErr err={errors?.address?.message} />
                     </span>
+                    <span>
+                        <label className="form-label" htmlFor=" permanent_adress">
+                            Permanent Address
+                        </label>
+                        <Controller
+                            control={control}
+                            name="permanentAdress"
+                            render={({ field: { onChange, value } }) => (
+                                <input
+                                    type="text"
+                                    id=" permanent_adress"
+                                    value={value}
+                                    onChange={onChange}
+                                    className={` border-2 border-blue-900 w-full h-11 rounded-md px-2 text-blue-900 my-2  `}
+                                    placeholder=""
+                                ></input>
+                            )}
+                        />
+                        <InlineErr err={errors?.address?.message} />
+                    </span>
                 </div>
+                <p className=" text-navy-blue font-semibold text-xl mb-5">Medical Informations</p>
+
             </form>
         </div>
     );

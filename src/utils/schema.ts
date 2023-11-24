@@ -21,6 +21,10 @@ const personalDetailFormSchema = yup
             .string()
             .min(2, "Enter a valid Address")
             .required("Address is required"),
+        permanentAdress: yup
+            .string()
+            .min(2, "Enter a valid Home Address")
+            .required("Home Address is required"),
         phoneNumber: yup.string().required("Phone number is required"),
     })
     .required();

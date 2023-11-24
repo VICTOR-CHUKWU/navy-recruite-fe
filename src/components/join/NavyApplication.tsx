@@ -35,20 +35,20 @@ const NavyApplication = () => {
     }
 
     return (
-        <div className=' mt-[6rem] h-[80vh] flex overflow-y-clip'>
+        <div className=' pt-[6rem] h-[100vh] flex overflow-y-clip'>
 
-            <div className=' relative w-[20%] h-full shrink-0 overflow-y-clip bg-slate-50 bg-opacity-20'>
+            <div className=' relative w-[30%] xl:w-[20%] h-full shrink-0 overflow-y-clip bg-slate-50 bg-opacity-20'>
                 <div className=' h-full py-10 overscroll-y-auto flex flex-col'>
                     {
                         applicationSteps.map(renderSteps)
                     }
                     <div className=' mt-10'>
-                        <button onClick={() => nextForm()} className=' w-72 mx-auto rounded-md h-16 font-semibold text-lg text-navy-blue bg-yellow-200 flex items-center justify-center cursor-pointer'>Save and Continue</button>
+                        <button onClick={() => nextForm()} className=' w-[80%] mx-auto rounded-md h-16 font-semibold text-lg text-navy-blue bg-yellow-200 flex items-center justify-center cursor-pointer'>Save and Continue</button>
                     </div>
                 </div>
             </div>
-            <div className=' relative flex-grow overflow-y-clip h-full px-6 py-10'>
-                <div className=' h-[90%] overflow-y-auto'>
+            <div className=' relative flex-grow overflow-y-clip h-full py-10'>
+                <div className=' h-[90%] px-4 overflow-y-auto'>
                     {
                         step === 1 ? (
                             <PersonalDetails ref={personalDetailRef} />
@@ -59,21 +59,21 @@ const NavyApplication = () => {
                                 : <PersonalDetails ref={personalDetailRef} />
                     }
                 </div>
-                <div className=' flex items-center justify-center gap-8'>
+                <div className=' flex items-center justify-center h-[10%] gap-8'>
                     {
                         step > 1 && (
-                            <button onClick={() => setStep(step - 1)} className='  w-72 mx-auto rounded-md h-16 font-semibold text-lg text-white bg-vivid-red flex items-center justify-center cursor-pointer'>Previous</button>
+                            <button onClick={() => setStep(step - 1)} className=' w-60 mx-auto rounded-md h-16 font-semibold text-lg text-white bg-vivid-red flex items-center justify-center cursor-pointer'>Previous</button>
                         )
                     }
 
                     {
                         (step > 1 && step === applicationSteps.length) && (
-                            <button className=' w-72 mx-auto rounded-md h-16 font-semibold text-lg text-navy-blue bg-yellow-200 flex items-center justify-center cursor-pointer'>Submit</button>
+                            <button className=' w-60 mx-auto rounded-md h-16 font-semibold text-lg text-navy-blue bg-yellow-200 flex items-center justify-center cursor-pointer'>Submit</button>
                         )
                     }
                     {
                         (step > 0 && step < applicationSteps.length) && (
-                            <button onClick={() => nextForm()} className=' w-72 mx-auto rounded-md h-16 font-semibold text-lg text-white bg-navy-blue flex items-center justify-center cursor-pointer'>Continue</button>
+                            <button onClick={() => nextForm()} className=' w-60 mx-auto rounded-md h-16 font-semibold text-lg text-white bg-navy-blue flex items-center justify-center cursor-pointer'>Continue</button>
                         )
                     }
 

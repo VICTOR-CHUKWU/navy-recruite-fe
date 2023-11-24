@@ -37,7 +37,7 @@ const AuthPage = () => {
             <div className="container relative h-[50rem]">
                 <h4 className=' capitalize text-navy-blue text-xl font-semibold'>Welcome to Nigerian Navy application page</h4>
                 <p className=' text-base mt-2'>For new users please create an account</p>
-                <div className={` ${currentView === 'login' ? ' -rotate-180 opacity-0 -z-[1] ' : ' rotate-0 z-[1] opacity-100 '} delay-300 transition-all duration-700 w-[30rem] mx-auto my-20 rounded-md shadow-md bg-navy-blue py-10 px-8 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`}>
+                <div className={` ${currentView === 'login' ? ' -rotate-180 opacity-0 -z-[1] ' : ' rotate-0 z-[1] opacity-100 '} delay-300 transition-all duration-700 w-[30rem] mx-auto my-20 rounded-md shadow-md bg-navy-blue py-10 px-8 absolute top-10 left-1/2 -translate-x-1/2`}>
                     <div className=" my-0 md:my-6 flex flex-col items-center gap-5">
                         <div className=' w-full shrink-0'>
                             <label className="block mb-2 text-sm font-medium capitalize text-white ">
@@ -90,7 +90,7 @@ const AuthPage = () => {
                         <p className=' text-white italic text-sm my-2 w-full shrink-0'>Existing user? <span className=' text-yellow-200 cursor-pointer' onClick={toggleView}>Login</span></p>
                     </div>
                 </div>
-                <div className={` ${currentView === 'register' ? ' -rotate-180 opacity-0 -z-[1] ' : ' rotate-0 z-[1] opacity-100 '} delay-300 absolute top-1/2 left-1/2 -translate-x-1/2 transition-all duration-700 w-[30rem] mx-auto my-20 rounded-md shadow-md bg-navy-blue py-10 px-8 -translate-y-1/2`}>
+                <div className={` ${currentView === 'register' ? ' -rotate-180 opacity-0 -z-[1] ' : ' rotate-0 z-[1] opacity-100 '} delay-300 absolute top-10 left-1/2 -translate-x-1/2 transition-all duration-700 w-[30rem] mx-auto my-20 rounded-md shadow-md bg-navy-blue py-10 px-8`}>
                     <div className=" my-0 md:my-6 flex flex-col items-center gap-5">
                         <div className=' w-full shrink-0'>
                             <label className="block mb-2 text-sm font-medium capitalize text-white ">
