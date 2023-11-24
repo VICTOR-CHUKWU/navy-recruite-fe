@@ -7,9 +7,11 @@ import { states } from "@/data";
 
 const PersonalDetails = forwardRef(({
     data,
+    callBack,
 
 }: {
     data?: any;
+    callBack: (data: any) => void
 }, ref) => {
     const {
         control,
@@ -34,15 +36,16 @@ const PersonalDetails = forwardRef(({
         childMethod: async () => {
             try {
                 const isValid = await trigger();
+                console.log(isValid, 'valid');
+
 
                 if (isValid) {
-                    const data = await handleSubmit((formData) => {
+                    await handleSubmit((formData) => {
                         console.log("Form submitted with data:", formData);
-                        return { ...formData }
+                        callBack(formData)
+                        // return { ...formData }
                     })();
-                    console.log(data, 'is data');
 
-                    return data
                 } else {
                     return null
                 }
@@ -59,13 +62,13 @@ const PersonalDetails = forwardRef(({
     };
     return (
         <div>
-            <h3 className=" text-center mb-8 font-semibold text-2xl">
+            <h3 className=" text-center mb-3 lg:mb-8 font-semibold text-base md:text-2xl">
                 Fill in your Personal Details
             </h3>
             <form >
                 <div className=" grid grid-cols-1 md:grid-cols-2 gap-3 border-b-2 border-slate-400 pb-3 mb-4">
                     <span>
-                        <label className="form-label" htmlFor="firstName">
+                        <label className=" text-xs md:text-base" htmlFor="firstName">
                             Your First Name
                         </label>
                         <Controller
@@ -77,7 +80,7 @@ const PersonalDetails = forwardRef(({
                                     id="firstName"
                                     value={value}
                                     onChange={onChange}
-                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                    className={` border-2 border-slate-300 placeholder:text-sm focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                     placeholder="First Name"
                                 ></input>
                             )}
@@ -85,7 +88,7 @@ const PersonalDetails = forwardRef(({
                         <InlineErr err={errors?.firstName?.message} />
                     </span>
                     <span>
-                        <label className="form-label" htmlFor="lastName">
+                        <label className="text-xs md:text-base" htmlFor="lastName">
                             Your Last Name
                         </label>
                         <Controller
@@ -105,7 +108,7 @@ const PersonalDetails = forwardRef(({
                         <InlineErr err={errors?.lastName?.message} />
                     </span>
                     <span>
-                        <label className="form-label" htmlFor="email">
+                        <label className="text-xs md:text-base" htmlFor="email">
                             Your Email
                         </label>
                         <Controller
@@ -125,7 +128,7 @@ const PersonalDetails = forwardRef(({
                         <InlineErr err={errors?.email?.message} />
                     </span>
                     <span>
-                        <label className="form-label" htmlFor="state">
+                        <label className="text-xs md:text-base" htmlFor="state">
                             Your State of Origin
                         </label>
                         <Controller
@@ -150,7 +153,7 @@ const PersonalDetails = forwardRef(({
                         <InlineErr err={errors?.state?.message} />
                     </span>
                     <span>
-                        <label className="form-label" htmlFor="phone">
+                        <label className="text-xs md:text-base" htmlFor="phone">
                             Your Phone Number
                         </label>
                         <Controller
@@ -170,7 +173,7 @@ const PersonalDetails = forwardRef(({
                         <InlineErr err={errors?.phoneNumber?.message} />
                     </span>
                     <span>
-                        <label className="form-label" htmlFor="address">
+                        <label className="text-xs md:text-base" htmlFor="address">
                             Your House Address
                         </label>
                         <Controller
@@ -190,7 +193,7 @@ const PersonalDetails = forwardRef(({
                         <InlineErr err={errors?.address?.message} />
                     </span>
                     <span>
-                        <label className="form-label" htmlFor=" permanent_adress">
+                        <label className="text-xs md:text-base" htmlFor=" permanent_adress">
                             Permanent Address
                         </label>
                         <Controller
@@ -213,7 +216,7 @@ const PersonalDetails = forwardRef(({
                 <p className=" text-navy-blue font-semibold text-xl mb-5">Medical Informations</p>
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <span>
-                        <label className="form-label" htmlFor=" Height">
+                        <label className="text-xs md:text-base" htmlFor=" Height">
                             Height(cm)
                         </label>
                         <Controller
@@ -233,7 +236,7 @@ const PersonalDetails = forwardRef(({
                         <InlineErr err={errors?.address?.message} />
                     </span>
                     <span>
-                        <label className="form-label" htmlFor="genotype">
+                        <label className="text-xs md:text-base" htmlFor="genotype">
                             Genotype
                         </label>
                         <Controller
@@ -261,7 +264,7 @@ const PersonalDetails = forwardRef(({
                         <InlineErr err={errors?.state?.message} />
                     </span>
                     <span>
-                        <label className="form-label" htmlFor="bloodgroup">
+                        <label className="text-xs md:text-base" htmlFor="bloodgroup">
                             Blood Grp
                         </label>
                         <Controller

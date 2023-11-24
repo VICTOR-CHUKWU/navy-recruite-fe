@@ -42,7 +42,7 @@ const _Nav = () => {
                     </Link>
                     <div className=' flex items-center gap-10'>
                         <span className=' hidden md:flex items-center gap-2'>Call <a href="tel:0809345678">0804844940</a></span>
-                        <Link href='join/apply' className=' border-none outline-none h-12 w-32 md:w-44 flex items-center justify-center bg-yellow-200 text-slate-800 font-semibold text-lg rounded-md cursor-pointer'>Apply Now</Link>
+                        <Link href='/join/apply' className=' border-none outline-none h-12 w-32 md:w-44 flex items-center justify-center bg-yellow-200 text-slate-800 font-semibold text-lg rounded-md cursor-pointer'>Apply Now</Link>
                     </div>
                 </nav>
             </span>
