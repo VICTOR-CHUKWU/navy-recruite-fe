@@ -58,7 +58,7 @@ const PersonalDetails = forwardRef(({
                                     id="firstName"
                                     value={value}
                                     onChange={onChange}
-                                    className={` border-2 border-blue-900 w-full h-11 rounded-md px-2 text-blue-900 my-2  `}
+                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                     placeholder="First Name"
                                 ></input>
                             )}
@@ -78,7 +78,7 @@ const PersonalDetails = forwardRef(({
                                     id="lastName"
                                     value={value}
                                     onChange={onChange}
-                                    className={` border-2 border-blue-900 w-full h-11 rounded-md px-2 text-blue-900 my-2  `}
+                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                     placeholder="Last Name"
                                 ></input>
                             )}
@@ -98,7 +98,7 @@ const PersonalDetails = forwardRef(({
                                     id="email"
                                     value={value}
                                     onChange={onChange}
-                                    className={` border-2 border-blue-900 w-full h-11 rounded-md px-2 text-blue-900 my-2  `}
+                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                     placeholder="ed@gmail.com"
                                 ></input>
                             )}
@@ -117,7 +117,7 @@ const PersonalDetails = forwardRef(({
                                     id="state"
                                     value={value}
                                     onChange={onChange}
-                                    className={` border-2 border-blue-900 w-full h-11 rounded-md px-2 text-blue-900 my-2  `}
+                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                 >
                                     <option>Choose a State</option>
                                     {states.map((el) => (
@@ -143,7 +143,7 @@ const PersonalDetails = forwardRef(({
                                     id="phone"
                                     value={value}
                                     onChange={onChange}
-                                    className={` border-2 border-blue-900 w-full h-11 rounded-md px-2 text-blue-900 my-2  `}
+                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                     placeholder="09089093647"
                                 ></input>
                             )}
@@ -163,7 +163,7 @@ const PersonalDetails = forwardRef(({
                                     id="address"
                                     value={value}
                                     onChange={onChange}
-                                    className={` border-2 border-blue-900 w-full h-11 rounded-md px-2 text-blue-900 my-2  `}
+                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                     placeholder=""
                                 ></input>
                             )}
@@ -183,7 +183,7 @@ const PersonalDetails = forwardRef(({
                                     id=" permanent_adress"
                                     value={value}
                                     onChange={onChange}
-                                    className={` border-2 border-blue-900 w-full h-11 rounded-md px-2 text-blue-900 my-2  `}
+                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                     placeholder=""
                                 ></input>
                             )}

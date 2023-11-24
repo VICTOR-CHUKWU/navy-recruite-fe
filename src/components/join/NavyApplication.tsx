@@ -12,7 +12,7 @@ const NavyApplication = () => {
     const renderSteps = useCallback(
         (el: { step: number, name: string }, i: number) => {
             return (
-                <button onClick={() => setStep(el.step)} className={`${step === el.step ? 'bg-navy-blue text-white' : 'bg-slate-200 text-black'}  w-full h-11 mb-3 outline-none border-0`}>{el.name}</button>
+                <button onClick={() => setStep(el.step)} className={`${step === el.step ? 'bg-navy-blue text-white' : 'bg-slate-200 text-black'}  w-full h-11 mb-3 text-left pl-12 outline-none border-0`}>{el.name}</button>
             )
         },
         [step],
@@ -20,7 +20,6 @@ const NavyApplication = () => {
 
     const nextForm = () => {
         setLoad(true)
-        // console.log('e met am');
         if (step === 1) {
             personalDetailRef.current.childMethod()
         } else if (step === 2) {
