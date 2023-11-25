@@ -3,6 +3,7 @@ import React, { useCallback, useRef, useState } from 'react'
 import { applicationSteps } from '@/data'
 import { PersonalDetails, AcademicsDetails } from '../forms'
 import { useRouter } from 'next/navigation'
+import { isAnyKeyEmpty } from '@/utils'
 
 const NavyApplication = () => {
     const [step, setStep] = useState<number>(1)
@@ -13,7 +14,7 @@ const NavyApplication = () => {
     const renderSteps = useCallback(
         (el: { step: number, name: string }, i: number) => {
             return (
-                <button key={el.step} onClick={() => setStep(el.step)} className={`${step === el.step ? 'bg-navy-blue text-white' : 'bg-slate-200 text-black'} w-[30%] shrink-0  lg:w-full h-8 md:h-11 mb-0 lg:mb-3 text-xs md:text-base text-center lg:text-left pl-0 lg:pl-12 outline-none border-0`}>{el.name}</button>
+                <button key={el.step} className={`${step === el.step ? 'bg-navy-blue text-white' : 'bg-slate-200 text-black'} w-[30%] shrink-0  lg:w-full h-8 md:h-11 mb-0 lg:mb-3 text-xs md:text-base text-center lg:text-left pl-0 lg:pl-12 outline-none border-0`}>{el.name}</button>
             )
         },
         [step],
@@ -26,7 +27,7 @@ const NavyApplication = () => {
 
                 await personalDetailRef.current.childMethod()
                 console.log(personalData, 'ref data');
-                if (personalData) {
+                if (isAnyKeyEmpty(personalData)) {
                     setStep(step + 1)
                 }
 
