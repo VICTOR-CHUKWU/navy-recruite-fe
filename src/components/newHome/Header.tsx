@@ -88,11 +88,6 @@ const Header = () => {
                     <h4 className='mt-8 text-white text-center lg:text-left font-semibold text-base lg:text-xl'>
                         Already have an account? <Link href='join/apply' className=' text-yellow-200 hover:text-red-500'>Continue Application</Link>.
                     </h4>
-
-                    {/* <div className=' hidden md:block'>
-                        <p className=' mb-4 text-sm text-white'>we value your privacy</p>
-                        <p className=' text-xs italic text-white'>By submitting this form and providing your contact information, you agree to receive information via electronic means, including email and text messages, phone calls and voice messages about upcoming courses, recruitment events, newsletters, and other resources from American Public University System, Inc., which includes American Military University (AMU) and American Public University (APU), American Public Education, Inc., and Zeta Global, a third-party contractor on behalf of American Public University System, Inc. This consent is not a condition of enrollment or purchase.</p>
-                    </div> */}
                 </div>
             </div>
         </div>
