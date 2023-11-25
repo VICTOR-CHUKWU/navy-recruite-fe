@@ -1,25 +1,26 @@
-import React from 'react'
+'use client'
+import { insights } from '@/data'
+import React, { useCallback } from 'react'
 
 const Insight = () => {
+    const renderInsights = useCallback(
+        (item: { head: string, text: string }, i: number) => {
+            return (
+                <div key={i} className=' w-[48%] md:w-[30%] lg:w-[20%] shrink-0 flex flex-col gap-2'>
+                    <h4 className=' text-navy-blue font-extrabold  text-base xl:text-2xl'>{item.head}</h4>
+                    <p className='text-sm xl:text-base text-left'>{item.text}</p>
+                </div>
+            )
+        },
+        [],
+    )
+
     return (
         <div className=' bg-slate-50 my-10 py-10'>
             <div className="container flex justify-between flex-wrap gap-2">
-                <div className=' w-[48%] md:w-[30%] lg:w-[20%] shrink-0 flex flex-col items-center gap-2'>
-                    <h4 className=' text-navy-blue font-extrabold text-4xl'>99%</h4>
-                    <p className='text-sm md:text-base text-center'>of our milliraty personell are highly trained and exposed to the best training facilities around the world</p>
-                </div>
-                <div className=' w-[48%] md:w-[30%] lg:w-[20%] shrink-0 flex flex-col items-center gap-2'>
-                    <h4 className=' text-navy-blue font-extrabold text-4xl'>#1</h4>
-                    <p className='text-sm md:text-base text-center'>in the global sailors ranking in 2023</p>
-                </div>
-                <div className=' w-[48%] md:w-[30%] lg:w-[20%] shrink-0 flex flex-col items-center gap-2'>
-                    <h4 className=' text-navy-blue font-extrabold text-4xl'>Agile</h4>
-                    <p className='text-sm md:text-base text-center'>members of the Nigerian Navy corp have succesfully tackled insurgency</p>
-                </div>
-                <div className=' w-[48%] md:w-[30%] lg:w-[20%] shrink-0 flex flex-col items-center gap-2'>
-                    <h4 className=' text-navy-blue font-extrabold text-4xl'>1990</h4>
-                    <p className='text-sm md:text-base text-center'>the corp was formed under Nigerian millitary</p>
-                </div>
+                {
+                    insights.map(renderInsights)
+                }
             </div>
         </div>
     )

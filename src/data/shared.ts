@@ -296,3 +296,22 @@ export const socialMedia: { icon: SVGIconName, link: string }[] = [
     { icon: 'instagram', link: 'https://www.instagram.com/ght_education' },
     { icon: 'twitter', link: 'https://www.instagram.com/ght_educations' },
 ]
+
+export const insights: { head: string, text: string }[] = [
+    {
+        head: `Global Sailor 2023`,
+        text: `Leading the 2023 global sailors ranking, showcasing the prowess and dedication of the Nigerian Navy. Earned by dedication and setting high standards`
+    },
+    {
+        head: `Elite Training`,
+        text: `Ninety-nine percent undergo rigorous training, ensuring our forces are among the best globally. Our commitment to excellence is reflected in top-tier facilities.`
+    },
+    {
+        head: `Swift, Agile Forces`,
+        text: `Exemplifying agility, our forces respond swiftly to challenges. Successfully tackling insurgency, our skilled members safeguard our nation with precision.`
+    },
+    {
+        head: `Established in 1990`,
+        text: `Founded in 1990, the Nigerian Navy has been integral to our military history. Evolving with time, we uphold the highest maritime defense standards.`
+    },
+]
