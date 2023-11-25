@@ -13,7 +13,7 @@ const NavyApplication = () => {
     const renderSteps = useCallback(
         (el: { step: number, name: string }, i: number) => {
             return (
-                <button onClick={() => setStep(el.step)} className={`${step === el.step ? 'bg-navy-blue text-white' : 'bg-slate-200 text-black'} w-[30%] shrink-0  lg:w-full h-8 md:h-11 mb-0 lg:mb-3 text-xs md:text-base text-center lg:text-left pl-0 lg:pl-12 outline-none border-0`}>{el.name}</button>
+                <button key={el.step} onClick={() => setStep(el.step)} className={`${step === el.step ? 'bg-navy-blue text-white' : 'bg-slate-200 text-black'} w-[30%] shrink-0  lg:w-full h-8 md:h-11 mb-0 lg:mb-3 text-xs md:text-base text-center lg:text-left pl-0 lg:pl-12 outline-none border-0`}>{el.name}</button>
             )
         },
         [step],
@@ -59,7 +59,7 @@ const NavyApplication = () => {
                     </div>
                 </div>
             </div>
-            <div className=' w-full relative flex-grow overflow-y-clip py-1 h-[60vh] md:h-[70vh] lg:h-full lg:py-10'>
+            <div className=' w-full lg:w-[70%] xl:w-[80%] relative shrink-0 overflow-y-clip py-1 h-[60vh] md:h-[70vh] lg:h-full lg:py-10'>
                 <div className=' h-[90%] px-4 overflow-y-auto'>
                     {
                         step === 1 ? (

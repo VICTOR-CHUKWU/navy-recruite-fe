@@ -61,7 +61,7 @@ const PersonalDetails = forwardRef(({
         console.log("lol");
     };
     return (
-        <div>
+        <div className=" mb-8">
             <h3 className=" text-center mb-3 lg:mb-8 font-semibold text-base md:text-2xl">
                 Fill in your Personal Details
             </h3>

@@ -81,7 +81,7 @@ const Header = () => {
                             </span>
                         </div>
                         <div className='col-span-1 md:col-span-2'>
-                            <button className=' w-full h-16 font-semibold text-lg text-white bg-vivid-red flex items-center justify-center cursor-pointer'>Enguire</button>
+                            <button className=' w-full h-16 font-semibold text-lg text-white bg-vivid-red flex items-center justify-center cursor-pointer'>Make Enquiry</button>
                         </div>
                     </div>
                     <h4 className='mb-8 text-white font-semibold text-xl'>
