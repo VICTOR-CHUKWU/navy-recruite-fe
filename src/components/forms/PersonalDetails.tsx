@@ -5,298 +5,305 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { InlineErr } from "../shared";
 import { states } from "@/data";
 
-const PersonalDetails = forwardRef(({
-    data,
-    callBack,
-
-}: {
-    data?: any;
-    callBack: (data: any) => void
-}, ref) => {
-    const {
-        control,
-        reset,
-        trigger,
-        formState: { errors },
-        handleSubmit,
-    } = useForm({
-        resolver: yupResolver(personalDetailFormSchema),
-        defaultValues: {
-            firstName: data?.firstName || "",
-            lastName: data?.lastName || "",
-            email: data?.email || "",
-            state: data?.state || "",
-            address: data?.address || "",
-            permanentAdress: '',
-            phoneNumber: data?.phoneNumber || "",
+const PersonalDetails = forwardRef(
+    (
+        {
+            data,
+            callBack,
+        }: {
+            data?: any;
+            callBack: (data: any) => void;
         },
-    });
+        ref
+    ) => {
+        const {
+            control,
+            reset,
+            trigger,
+            formState: { errors },
+            handleSubmit,
+        } = useForm({
+            resolver: yupResolver(personalDetailFormSchema),
+            defaultValues: {
+                firstName: data?.firstName || "",
+                lastName: data?.lastName || "",
+                email: data?.email || "",
+                state: data?.state || "",
+                address: data?.address || "",
+                permanentAdress: data?.permanentAdress || "",
+                phoneNumber: data?.phoneNumber || "",
+            },
+        });
 
-    useImperativeHandle(ref, () => ({
-        childMethod: async () => {
-            try {
-                const isValid = await trigger();
-                console.log(isValid, 'valid');
+        useImperativeHandle(ref, () => ({
+            childMethod: async () => {
+                try {
+                    const isValid = await trigger();
+                    console.log(isValid, "valid");
 
+                    if (isValid) {
+                        await handleSubmit((formData) => {
+                            console.log("Form submitted with data:", formData);
+                            callBack(formData);
+                            // return { ...formData }
+                        })();
+                        return isValid;
+                    } else {
+                        return null;
+                    }
+                } catch (error) {
+                    console.log(error, "error");
 
-                if (isValid) {
-                    await handleSubmit((formData) => {
-                        console.log("Form submitted with data:", formData);
-                        callBack(formData)
-                        // return { ...formData }
-                    })();
-
-                } else {
-                    return null
+                    return null;
                 }
-            } catch (error) {
-                console.log(error, 'error');
+            },
+        }));
 
-                return null
-            }
-        },
-    }))
-
-    const onSubmit = () => {
-        console.log("lol");
-    };
-    return (
-        <div className=" mb-8">
-            <h3 className=" text-center mb-3 lg:mb-8 font-semibold text-base md:text-2xl">
-                Fill in your Personal Details
-            </h3>
-            <form >
-                <div className=" grid grid-cols-1 md:grid-cols-2 gap-3 border-b-2 border-slate-400 pb-3 mb-4">
-                    <span>
-                        <label className=" text-xs md:text-base" htmlFor="firstName">
-                            Your First Name
-                        </label>
-                        <Controller
-                            control={control}
-                            name="firstName"
-                            render={({ field: { onChange, value } }) => (
-                                <input
-                                    type="text"
-                                    id="firstName"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 border-slate-300 placeholder:text-sm focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                    placeholder="First Name"
-                                ></input>
-                            )}
-                        />
-                        <InlineErr err={errors?.firstName?.message} />
-                    </span>
-                    <span>
-                        <label className="text-xs md:text-base" htmlFor="lastName">
-                            Your Last Name
-                        </label>
-                        <Controller
-                            control={control}
-                            name="lastName"
-                            render={({ field: { onChange, value } }) => (
-                                <input
-                                    type="text"
-                                    id="lastName"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                    placeholder="Last Name"
-                                ></input>
-                            )}
-                        />
-                        <InlineErr err={errors?.lastName?.message} />
-                    </span>
-                    <span>
-                        <label className="text-xs md:text-base" htmlFor="email">
-                            Your Email
-                        </label>
-                        <Controller
-                            control={control}
-                            name="email"
-                            render={({ field: { onChange, value } }) => (
-                                <input
-                                    type="email"
-                                    id="email"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                    placeholder="ed@gmail.com"
-                                ></input>
-                            )}
-                        />
-                        <InlineErr err={errors?.email?.message} />
-                    </span>
-                    <span>
-                        <label className="text-xs md:text-base" htmlFor="state">
-                            Your State of Origin
-                        </label>
-                        <Controller
-                            control={control}
-                            name="state"
-                            render={({ field: { onChange, value } }) => (
-                                <select
-                                    id="state"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 bg-white border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                >
-                                    <option>Choose a State</option>
-                                    {states.map((el) => (
-                                        <option key={el.value} value={el.value}>
-                                            {el.text}
-                                        </option>
-                                    ))}
-                                </select>
-                            )}
-                        />
-                        <InlineErr err={errors?.state?.message} />
-                    </span>
-                    <span>
-                        <label className="text-xs md:text-base" htmlFor="phone">
-                            Your Phone Number
-                        </label>
-                        <Controller
-                            control={control}
-                            name="phoneNumber"
-                            render={({ field: { onChange, value } }) => (
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                    placeholder="09089093647"
-                                ></input>
-                            )}
-                        />
-                        <InlineErr err={errors?.phoneNumber?.message} />
-                    </span>
-                    <span>
-                        <label className="text-xs md:text-base" htmlFor="address">
-                            Your House Address
-                        </label>
-                        <Controller
-                            control={control}
-                            name="address"
-                            render={({ field: { onChange, value } }) => (
-                                <input
-                                    type="text"
-                                    id="address"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                    placeholder=""
-                                ></input>
-                            )}
-                        />
-                        <InlineErr err={errors?.address?.message} />
-                    </span>
-                    <span>
-                        <label className="text-xs md:text-base" htmlFor=" permanent_adress">
-                            Permanent Address
-                        </label>
-                        <Controller
-                            control={control}
-                            name="permanentAdress"
-                            render={({ field: { onChange, value } }) => (
-                                <input
-                                    type="text"
-                                    id=" permanent_adress"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                    placeholder=""
-                                ></input>
-                            )}
-                        />
-                        <InlineErr err={errors?.address?.message} />
-                    </span>
-                </div>
-                <p className=" text-navy-blue font-semibold text-xl mb-5">Medical Informations</p>
-                <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <span>
-                        <label className="text-xs md:text-base" htmlFor=" Height">
-                            Height(cm)
-                        </label>
-                        <Controller
-                            control={control}
-                            name="permanentAdress"
-                            render={({ field: { onChange, value } }) => (
-                                <input
-                                    type="number"
-                                    id=" Height"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                    placeholder=""
-                                ></input>
-                            )}
-                        />
-                        <InlineErr err={errors?.address?.message} />
-                    </span>
-                    <span>
-                        <label className="text-xs md:text-base" htmlFor="genotype">
-                            Genotype
-                        </label>
-                        <Controller
-                            control={control}
-                            name="state"
-                            render={({ field: { onChange, value } }) => (
-                                <select
-                                    id="genotype"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 bg-white border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                >
-                                    <option>Choose a Gneotype</option>
-                                    <option value={'o+'}>O+</option>
-                                    <option value={'o+'}>O+</option>
-                                    <option value={'o+'}>O+</option>
-                                    {/* {states.map((el) => (
-                                        <option key={el.value} value={el.value}>
-                                            {el.text}
-                                        </option>
-                                    ))} */}
-                                </select>
-                            )}
-                        />
-                        <InlineErr err={errors?.state?.message} />
-                    </span>
-                    <span>
-                        <label className="text-xs md:text-base" htmlFor="bloodgroup">
-                            Blood Grp
-                        </label>
-                        <Controller
-                            control={control}
-                            name="state"
-                            render={({ field: { onChange, value } }) => (
-                                <select
-                                    id="bloodgroup"
-                                    value={value}
-                                    onChange={onChange}
-                                    className={` border-2 border-slate-300 bg-white focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
-                                >
-                                    <option>Choose a blod group</option>
-                                    <option value={'o+'}>O+</option>
-                                    <option value={'o+'}>O+</option>
-                                    <option value={'o+'}>O+</option>
-                                    {/* {states.map((el) => (
+        const onSubmit = () => {
+            console.log("lol");
+        };
+        return (
+            <div className=" mb-8">
+                <h3 className=" text-center mb-3 lg:mb-8 font-semibold text-base md:text-2xl">
+                    Fill in your Personal Details
+                </h3>
+                <form>
+                    <div className=" grid grid-cols-1 md:grid-cols-2 gap-3 border-b-2 border-slate-400 pb-3 mb-4">
+                        <span>
+                            <label className=" text-xs md:text-base" htmlFor="firstName">
+                                Your First Name
+                            </label>
+                            <Controller
+                                control={control}
+                                name="firstName"
+                                render={({ field: { onChange, value } }) => (
+                                    <input
+                                        type="text"
+                                        id="firstName"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 border-slate-300 placeholder:text-sm focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                        placeholder="First Name"
+                                    ></input>
+                                )}
+                            />
+                            <InlineErr err={errors?.firstName?.message} />
+                        </span>
+                        <span>
+                            <label className="text-xs md:text-base" htmlFor="lastName">
+                                Your Last Name
+                            </label>
+                            <Controller
+                                control={control}
+                                name="lastName"
+                                render={({ field: { onChange, value } }) => (
+                                    <input
+                                        type="text"
+                                        id="lastName"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                        placeholder="Last Name"
+                                    ></input>
+                                )}
+                            />
+                            <InlineErr err={errors?.lastName?.message} />
+                        </span>
+                        <span>
+                            <label className="text-xs md:text-base" htmlFor="email">
+                                Your Email
+                            </label>
+                            <Controller
+                                control={control}
+                                name="email"
+                                render={({ field: { onChange, value } }) => (
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                        placeholder="ed@gmail.com"
+                                    ></input>
+                                )}
+                            />
+                            <InlineErr err={errors?.email?.message} />
+                        </span>
+                        <span>
+                            <label className="text-xs md:text-base" htmlFor="state">
+                                Your State of Origin
+                            </label>
+                            <Controller
+                                control={control}
+                                name="state"
+                                render={({ field: { onChange, value } }) => (
+                                    <select
+                                        id="state"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 bg-white border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                    >
+                                        <option>Choose a State</option>
+                                        {states.map((el) => (
+                                            <option key={el.value} value={el.value}>
+                                                {el.text}
+                                            </option>
+                                        ))}
+                                    </select>
+                                )}
+                            />
+                            <InlineErr err={errors?.state?.message} />
+                        </span>
+                        <span>
+                            <label className="text-xs md:text-base" htmlFor="phone">
+                                Your Phone Number
+                            </label>
+                            <Controller
+                                control={control}
+                                name="phoneNumber"
+                                render={({ field: { onChange, value } }) => (
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                        placeholder="09089093647"
+                                    ></input>
+                                )}
+                            />
+                            <InlineErr err={errors?.phoneNumber?.message} />
+                        </span>
+                        <span>
+                            <label className="text-xs md:text-base" htmlFor="address">
+                                Your House Address
+                            </label>
+                            <Controller
+                                control={control}
+                                name="address"
+                                render={({ field: { onChange, value } }) => (
+                                    <input
+                                        type="text"
+                                        id="address"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                        placeholder=""
+                                    ></input>
+                                )}
+                            />
+                            <InlineErr err={errors?.address?.message} />
+                        </span>
+                        <span>
+                            <label
+                                className="text-xs md:text-base"
+                                htmlFor=" permanent_adress"
+                            >
+                                Permanent Address
+                            </label>
+                            <Controller
+                                control={control}
+                                name="permanentAdress"
+                                render={({ field: { onChange, value } }) => (
+                                    <input
+                                        type="text"
+                                        id=" permanent_adress"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                        placeholder=""
+                                    ></input>
+                                )}
+                            />
+                            <InlineErr err={errors?.address?.message} />
+                        </span>
+                    </div>
+                    <p className=" text-navy-blue font-semibold text-xl mb-5">
+                        Medical Informations
+                    </p>
+                    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <span>
+                            <label className="text-xs md:text-base" htmlFor=" Height">
+                                Height(cm)
+                            </label>
+                            <Controller
+                                control={control}
+                                name="permanentAdress"
+                                render={({ field: { onChange, value } }) => (
+                                    <input
+                                        type="number"
+                                        id=" Height"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                        placeholder=""
+                                    ></input>
+                                )}
+                            />
+                            <InlineErr err={errors?.address?.message} />
+                        </span>
+                        <span>
+                            <label className="text-xs md:text-base" htmlFor="genotype">
+                                Genotype
+                            </label>
+                            <Controller
+                                control={control}
+                                name="state"
+                                render={({ field: { onChange, value } }) => (
+                                    <select
+                                        id="genotype"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 bg-white border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                    >
+                                        <option>Choose a Gneotype</option>
+                                        <option value={"o+"}>O+</option>
+                                        <option value={"o+"}>O+</option>
+                                        <option value={"o+"}>O+</option>
+                                        {/* {states.map((el) => (
                                         <option key={el.value} value={el.value}>
                                             {el.text}
                                         </option>
                                     ))} */}
-                                </select>
-                            )}
-                        />
-                        <InlineErr err={errors?.state?.message} />
-                    </span>
-                </div>
+                                    </select>
+                                )}
+                            />
+                            <InlineErr err={errors?.state?.message} />
+                        </span>
+                        <span>
+                            <label className="text-xs md:text-base" htmlFor="bloodgroup">
+                                Blood Grp
+                            </label>
+                            <Controller
+                                control={control}
+                                name="state"
+                                render={({ field: { onChange, value } }) => (
+                                    <select
+                                        id="bloodgroup"
+                                        value={value}
+                                        onChange={onChange}
+                                        className={` border-2 border-slate-300 bg-white focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
+                                    >
+                                        <option>Choose a blod group</option>
+                                        <option value={"o+"}>O+</option>
+                                        <option value={"o+"}>O+</option>
+                                        <option value={"o+"}>O+</option>
+                                        {/* {states.map((el) => (
+                                        <option key={el.value} value={el.value}>
+                                            {el.text}
+                                        </option>
+                                    ))} */}
+                                    </select>
+                                )}
+                            />
+                            <InlineErr err={errors?.state?.message} />
+                        </span>
+                    </div>
+                </form>
+            </div>
+        );
+    }
+);
 
-            </form>
-        </div>
-    );
-});
-
-PersonalDetails.displayName = 'PersonalDetails';
+PersonalDetails.displayName = "PersonalDetails";
 export default PersonalDetails;

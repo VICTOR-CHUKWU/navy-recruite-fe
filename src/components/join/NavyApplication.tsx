@@ -2,8 +2,7 @@
 import React, { useCallback, useRef, useState } from 'react'
 import { applicationSteps } from '@/data'
 import { PersonalDetails, AcademicsDetails } from '../forms'
-import { useRouter } from 'next/navigation'
-import { isAnyKeyEmpty } from '@/utils'
+import { Loader } from '../shared'
 
 const NavyApplication = () => {
     const [step, setStep] = useState<number>(1)
@@ -24,10 +23,9 @@ const NavyApplication = () => {
         setLoad(true)
         try {
             if (step === 1) {
-
-                await personalDetailRef.current.childMethod()
-                console.log(personalData, 'ref data');
-                if (isAnyKeyEmpty(personalData)) {
+                const data = await personalDetailRef.current.childMethod()
+                if (data) {
+                    await new Promise((resolve) => setTimeout(resolve, 1000));
                     setStep(step + 1)
                 }
 
@@ -61,6 +59,10 @@ const NavyApplication = () => {
                 </div>
             </div>
             <div className=' w-full lg:w-[70%] xl:w-[80%] relative shrink-0 overflow-y-clip py-1 h-[60vh] md:h-[70vh] lg:h-full lg:py-10'>
+                {
+                    load && (<div className=' h-full w-full bg-slate-100 bg-opacity-60 absolute top-0 left-0 bottom-0 z-[3] flex items-center justify-center'><Loader /></div>)
+
+                }
                 <div className=' h-[90%] px-4 overflow-y-auto'>
                     {
                         step === 1 ? (
