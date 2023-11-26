@@ -7,7 +7,7 @@ import Link from "next/link";
 const Footer = () => {
     return (
         <div className=" bg-navy-blue py-5">
-            <div className=" container text-white flex justify-between flex-wrap gap-4">
+            <div className=" container text-white flex justify-between items-center flex-wrap gap-4">
                 <Link
                     href={"/"}
                     className={` text-white font-bold text-xl flex items-center gap-1`}
@@ -16,7 +16,7 @@ const Footer = () => {
                     <span className=" text-xs md:text-base">Nigerian Navy</span>
                 </Link>
 
-                <p className=" text-white italic font-light">Nigerian Navy 2023</p>
+                <p className=" text-white text-sm italic font-light">Nigerian Navy 2023</p>
             </div>
         </div>
     );

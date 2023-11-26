@@ -7,7 +7,7 @@ export const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
             {children}
-            {pathname !== "/join/applicationform" && <Footer />}
+            {pathname !== "/join/applicationforms" && <Footer />}
         </>
     )
 };
