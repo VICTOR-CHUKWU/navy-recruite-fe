@@ -32,6 +32,9 @@ const PersonalDetails = forwardRef(
                 address: data?.address || "",
                 permanentAdress: data?.permanentAdress || "",
                 phoneNumber: data?.phoneNumber || "",
+                height: data?.height || '',
+                bloodGrp: data?.bloodGrp || '',
+                genotype: data?.genotype || ''
             },
         });
 
@@ -215,11 +218,11 @@ const PersonalDetails = forwardRef(
                                     ></input>
                                 )}
                             />
-                            <InlineErr err={errors?.address?.message} />
+                            <InlineErr err={errors?.permanentAdress?.message} />
                         </span>
                     </div>
                     <p className=" text-navy-blue font-semibold text-xl mb-5">
-                        Medical Informations
+                        Medical information
                     </p>
                     <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <span>
@@ -228,7 +231,7 @@ const PersonalDetails = forwardRef(
                             </label>
                             <Controller
                                 control={control}
-                                name="permanentAdress"
+                                name="height"
                                 render={({ field: { onChange, value } }) => (
                                     <input
                                         type="number"
@@ -240,7 +243,7 @@ const PersonalDetails = forwardRef(
                                     ></input>
                                 )}
                             />
-                            <InlineErr err={errors?.address?.message} />
+                            <InlineErr err={errors?.height?.message} />
                         </span>
                         <span>
                             <label className="text-xs md:text-base" htmlFor="genotype">
@@ -248,7 +251,7 @@ const PersonalDetails = forwardRef(
                             </label>
                             <Controller
                                 control={control}
-                                name="state"
+                                name="genotype"
                                 render={({ field: { onChange, value } }) => (
                                     <select
                                         id="genotype"
@@ -256,27 +259,24 @@ const PersonalDetails = forwardRef(
                                         onChange={onChange}
                                         className={` border-2 bg-white border-slate-300 focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                     >
-                                        <option>Choose a Gneotype</option>
-                                        <option value={"o+"}>O+</option>
-                                        <option value={"o+"}>O+</option>
-                                        <option value={"o+"}>O+</option>
-                                        {/* {states.map((el) => (
-                                        <option key={el.value} value={el.value}>
-                                            {el.text}
-                                        </option>
-                                    ))} */}
+                                        <option>Choose Genotype</option>
+                                        <option value={"AA"}>AA</option>
+                                        <option value={"AS+"}>AS</option>
+                                        <option value={"SS"}>SS</option>
+                                        <option value={"SC"}>SC</option>
+
                                     </select>
                                 )}
                             />
-                            <InlineErr err={errors?.state?.message} />
+                            <InlineErr err={errors?.genotype?.message} />
                         </span>
                         <span>
                             <label className="text-xs md:text-base" htmlFor="bloodgroup">
-                                Blood Grp
+                                Blood group
                             </label>
                             <Controller
                                 control={control}
-                                name="state"
+                                name="bloodGrp"
                                 render={({ field: { onChange, value } }) => (
                                     <select
                                         id="bloodgroup"
@@ -284,19 +284,17 @@ const PersonalDetails = forwardRef(
                                         onChange={onChange}
                                         className={` border-2 border-slate-300 bg-white focus:border-slate-500 w-full h-11 outline-none rounded-md px-2 text-blue-900 my-2  `}
                                     >
-                                        <option>Choose a blod group</option>
+                                        <option>Choose a bloOd group</option>
                                         <option value={"o+"}>O+</option>
-                                        <option value={"o+"}>O+</option>
-                                        <option value={"o+"}>O+</option>
-                                        {/* {states.map((el) => (
-                                        <option key={el.value} value={el.value}>
-                                            {el.text}
-                                        </option>
-                                    ))} */}
+                                        <option value={"o-"}>O-</option>
+                                        <option value={"ab"}>ab</option>
+                                        <option value={"b"}>b</option>
+                                        <option value={"a"}>a</option>
+
                                     </select>
                                 )}
                             />
-                            <InlineErr err={errors?.state?.message} />
+                            <InlineErr err={errors?.bloodGrp?.message} />
                         </span>
                     </div>
                 </form>

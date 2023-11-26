@@ -26,6 +26,9 @@ const personalDetailFormSchema = yup
             .min(2, "Enter a valid Home Address")
             .required("Home Address is required"),
         phoneNumber: yup.string().required("Phone number is required"),
+        height: yup.string().required("height is required"),
+        bloodGrp: yup.string().required("blood group is required"),
+        genotype: yup.string().required("genotype is required"),
     })
     .required();
 
