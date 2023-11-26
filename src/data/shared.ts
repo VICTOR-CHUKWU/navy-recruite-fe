@@ -266,28 +266,28 @@ export const navMenuItems: INavMenu[] = [
 
 export const featurenews: IFeatureNews[] = [
     {
-        img: '/img/millitary1.webp',
-        date: 'August 4, 2023',
-        header: `FINAL DECISION: TOP MILITARY COURT RULES THAT CHIEF ERIC GILMET CHARGES ARE AGAIN DISMISSED WITH PREJUDICE`,
-        text: `On August 15, 2022, the Navy-Marine Corps Court of Criminal Appeals (NMCCA) overturned the trial judge’s original dismissal of Chief Eric Gilmet’s case and reinstated all charges that had previously been dismissed with prejudice on February 9, 2022`,
-        publisher: 'Okenwa Nnabuike',
-        source: 'vanguard'
+        img: '/img/news1.webp',
+        date: '6 OCT 2023',
+        header: `GRADUATION CEREMONY OF THE NIGERIAN NAVY`,
+        text: `SPECIAL BOAT SERVICE BASIC OPERATING CAPABILITY COURSE 18 AND TRANSFER CEREMONY OF VERTICAL INTEGRATED LOGISTICS APPROACH RIGID HULLED INFLATABLE BOAT AT THE JOINT MARITIME SECURITY TRAINING CENTRE, NAVY TOWN OJO LAGOS ON FRIDAY`,
+        publisher: 'DINFO',
+        source: 'https://www.navy.mil.ng/2023/10/08/graduation-ceremony-of-the-nigerian-navy-special-boat-service-basic-operating-capability-course-18-and-transfer-ceremony-of-vertical-integrated-logistics-approach-rigid-hulled-inflatable-boat-at-the-2/'
     },
     {
-        img: '/img/millitary1.webp',
-        date: 'August 4, 2023',
-        header: `FINAL DECISION: TOP MILITARY COURT RULES THAT CHIEF ERIC GILMET CHARGES ARE AGAIN DISMISSED WITH PREJUDICE`,
-        text: `On August 15, 2022, the Navy-Marine Corps Court of Criminal Appeals (NMCCA) overturned the trial judge’s original dismissal of Chief Eric Gilmet’s case and reinstated all charges that had previously been dismissed with prejudice on February 9, 2022`,
-        publisher: 'Okenwa Nnabuike',
-        source: 'vanguard'
+        img: '/img/news2.webp',
+        date: '2 SEP 2023',
+        header: `COMMISSIONING OF PROJECTS AT NIGERIAN NAVY`,
+        text: `COMMISSIONING OF PROJECTS AT NIGERIAN NAVY BASIC TRAINING SCHOOL, ONNE BY THE CHIEF OF THE NAVAL STAFF, VICE ADMIRAL EI OGALLA ON SATURDAY`,
+        publisher: 'DINFO',
+        source: 'https://www.navy.mil.ng/2023/09/03/commissioning-of-projects-at-nigerian-navy-basic-training-school-onne-by-the-chief-of-the-naval-staff-vice-admiral-ei-ogalla-on-saturday-2-september-2023/'
     },
     {
-        img: '/img/millitary1.webp',
-        date: 'August 4, 2023',
-        header: `FINAL DECISION: TOP MILITARY COURT RULES THAT CHIEF ERIC GILMET CHARGES ARE AGAIN DISMISSED WITH PREJUDICE`,
-        text: `On August 15, 2022, the Navy-Marine Corps Court of Criminal Appeals (NMCCA) overturned the trial judge’s original dismissal of Chief Eric Gilmet’s case and reinstated all charges that had previously been dismissed with prejudice on February 9, 2022`,
-        publisher: 'Okenwa Nnabuike',
-        source: 'vanguard'
+        img: '/img/news3.webp',
+        date: '10 JUL 23',
+        header: `COURTESY VISIT TO CHIEF OF THE NAVAL STAFF`,
+        text: `COURTESY VISIT TO CHIEF OF THE NAVAL STAFF, REAR ADMIRAL IE OGALLA AM BY THE COMMANDANT ARMED FORCES COMMAND AND STAFF COLLEGE, AIR VICE MARSHAL HI ALHAJI ON MONDAY 10 JULY 23`,
+        publisher: 'DINFO',
+        source: 'https://www.navy.mil.ng/2023/07/10/courtesy-visit-to-chief-of-the-naval-staff-rear-admiral-ie-ogalla-am-by-the-commandant-armed-forces-command-and-staff-college-air-vice-marshal-hi-alhaji-on-monday-10-july-23/'
     },
 ]
 

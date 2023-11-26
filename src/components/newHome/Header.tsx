@@ -27,14 +27,14 @@ const Header = () => {
         // <section className=' bg-yellow-200 h-auto mt-20'>
         <div className={`mt-3 w-full bg-white h-full pt-0 ${S.newHead}`} >
             <div className="container grid grid-cols-1 lg:grid-cols-2 gap-5 h-full">
-                <div className={` w-full lg:w-2/3 h-[30vh] ml-auto md:h-full flex flex-col justify-stretch`}>
-                    <h1 className='text-center lg:text-right mt-8 text-navy-blue text-3xl xl:text-6xl font-bold'>SERVING THE BRAVE</h1>
-                    <div className=' w-80 mt-auto hidden md:block relative z-[3] h-32 px-10 py-7 rounded-md ml-auto bg-yellow-200'>
+                <div className={` w-full lg:w-1/2 xl:w-3/4 h-[30vh] ml-auto md:h-full flex flex-col justify-stretch`}>
+                    <h1 className='text-center lg:text-right mt-8 text-navy-blue text-3xl xl:text-6xl font-bold uppercase'>Defend your nation</h1>
+                    <div className=' w-80 lg:w-60 xl:w-80 mt-auto hidden md:block relative z-[3] px-10 lg:px-2 xl:px-10 py-7 lg:py-3 xl:py-7 rounded-md ml-auto bg-yellow-200'>
                         <p className=' text-sm'>The bonds we form. The battles we face. See what it means to fight and win as a Nigerian Navy.</p>
                     </div>
                 </div>
                 <div className=' relative z-[3] pl-0 lg:pl-2'>
-                    <h4 className=' text-white font-semibold text-xl mb-5 mt-5 text-center lg:text-left'>Join the brave!!</h4>
+                    <h4 className=' text-white font-semibold text-xl mb-5 mt-5 text-center lg:text-left'>Your journey begins here!!</h4>
                     <div className="hidden my-0 md:my-6 lg:flex flex-col items-center gap-4 xl:gap-10">
                         <div className=' w-full shrink-0'>
                             <label className="block mb-2 text-sm font-medium capitalize text-white ">
